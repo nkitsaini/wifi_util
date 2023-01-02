@@ -1,0 +1,24 @@
+[package]
+name = "wifi_util"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.68"
+clap = { version = "4.0.32", features = ["derive"] }
+# We don't need https for router connection, simplifies cross-compilation of openssl
+reqwest = { version = "0.11.13", default-features = false }
+soup = "0.5.1"
+tokio = { version = "1.23.0", features = ["macros", "full"] }
+url = "2.3.1"
+
+
+[profile.release]
+# From: https://github.com/johnthagen/min-sized-rust
+strip = true  # Automatically strip symbols from the binary.
+# This will run on routers or raspberry where storage is a concern
+opt-level = "z"  # Optimize for size.
+lto = true
+codegen-units = 1

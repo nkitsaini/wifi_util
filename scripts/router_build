@@ -1,0 +1,2 @@
+#!/bin/sh
+cross build --release --target mipsel-unknown-linux-musl
