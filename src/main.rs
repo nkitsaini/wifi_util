@@ -10,7 +10,7 @@ enum Action {
     Restart
 }
 
-/// Simple program to greet a person
+/// Simple program to deal with syrotech routers
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
 struct Args {
@@ -27,7 +27,7 @@ struct Args {
     pass: String,
 
     /// Should the router be restarted.
-    /// Only logs in by default
+    /// By default it only logs in
     #[arg(short, long, default_value_t=false)]
     restart: bool
 }

@@ -1,7 +1,8 @@
-Simple utility to restart Syrotech brand routers. I've built this to restart syrotech router from a bridge router running openwrt. Hence the project does not contain openssl to simplify cross-compilation and also it's not used anywhere in this project.  
-Syrotech routers have IP based login, so if bridge logs in all the clients will automatically log in. This binary by default only logs into the router. And can be configured to restart the router by passing `-r` arg.   
+Simple utility to deal with Syrotech brand routers. I've built this to restart syrotech router from a bridge router running openwrt. Project does not include openssl to simplify cross-compilation.
 
-Btw, if you don't know what I'm talking about most probably you don't need any of this. This is built for very specific reqirement.
+Syrotech routers have IP based login, so if the bridge router logs in, all the clients will automatically log in. This binary by default only logs into the router. And can be configured to also restart the router by passing `-r` arg.   
+
+By the way, if you don't know what I'm talking about most probably you don't need any of this. This is built for very specific reqirement.
 
 # Cross builds
 Uses https://github.com/cross-rs/cross for cross-compilation
